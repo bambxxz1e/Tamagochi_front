@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다마고치 게임</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('images/main_back.jpg') no-repeat center;
+            background-size: cover; /* 배경 이미지를 화면에 맞추기 */
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #game-frame {
+            position: relative;
+            width: 1920px; /* 이미지의 실제 너비 */
+            height: 1080px; /* 이미지의 실제 높이 */
+            background: url('images/main_back.jpg') no-repeat center; /* 배경이미지 삽입 */
+            background-size: 100% 100%; /* 프레임에 맞추기 */
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #game-container {
+            position: absolute;
+            top: 50%;
+            left: 49.4%;
+            transform: translate(-50%, -50%);
+            width: 1010px; /* 네모 부분의 너비 */
+            height: 710px; /* 네모 부분의 높이 */
+            background-color: white;
+            border-radius: 27px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        #game-canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-frame">
+        <!-- 게임이 실행될 하얀 부분 -->
+        <div id="game-container">
+            <canvas id="game-canvas"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('game-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // 캔버스 크기 조정
+        canvas.width = 780;
+        canvas.height = 400;
+
+        // 간단한 다마고치 게임 초기 설정
+        let tamagotchi = {
+            x: 50,
+            y: 50,
+            size: 20,
+            hunger: 0,
+            happiness: 100,
+        };
+
+        function drawTamagotchi() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // 상태 표시
+            ctx.font = '20px Arial';
+            ctx.fillStyle = 'black';
+            ctx.fillText(`배고픔: ${tamagotchi.hunger}`, 10, 20);
+            ctx.fillText(`행복: ${tamagotchi.happiness}`, 10, 50);
+        }
+
+        // 게임 실행
+        setInterval(updateGame, 100);
+    </script>
+</body>
+</html>
