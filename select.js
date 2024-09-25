@@ -14,20 +14,21 @@ const confirmButton = document.getElementById('confirm-button');
 // 알 컨테이너 (숨기기 위해 추가)
 const eggContainer = document.querySelector('.egg-container');
 
+
 // 알 선택 시 팝업 띄우기 및 알 숨기기
 document.getElementById('ddak-egg').addEventListener('click', function() {
     localStorage.setItem('selectedEgg', 'ddak');  // 알 저장
-    showPopup('Your pet is... Ddak!', 'images/Ddak.png');
+    showPopup('당신의 펫은 Ddak!', 'images/Ddak.png');
 });
 
 document.getElementById('pong-egg').addEventListener('click', function() {
     localStorage.setItem('selectedEgg', 'pong');  // 알 저장
-    showPopup('Your pet is... Pong!', 'images/Pong.png');
+    showPopup('당신의 펫은 Pong!', 'images/Pong.png');
 });
 
 document.getElementById('ahk-egg').addEventListener('click', function() {
     localStorage.setItem('selectedEgg', 'ahk');  // 알 저장
-    showPopup('Your pet is... Ahk!', 'images/Ahk.png');
+    showPopup('당신의 펫은 Ahk!', 'images/Ahk.png');
 });
 
 // 팝업을 보여주는 함수
@@ -51,4 +52,3 @@ confirmButton.addEventListener('click', function() {
         window.location.href = 'Tamagochi_Ahkmain.html';
     }
 });
-
