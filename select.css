@@ -56,3 +56,36 @@ body, html {
     cursor: pointer;
     width: 300px;
 }
+
+#popup {
+    width: 800px;  /* 원하는 너비 */
+    height: 500px; /* 원하는 높이 */
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+#popup-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#popup img {
+    max-width: 100%;  /* 팝업 크기에 맞춰 이미지 크기 조정 */
+    max-height: 70%;  /* 높이를 제한하여 비율 유지 */
+}
+
+#confirm-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1001;
+}
